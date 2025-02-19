@@ -1,1 +1,14 @@
 ---
+- name: build project
+  hosts: db
+  become: yes
+  
+  roles:
+   - build
+
+- name: run progect
+  hosts: web
+  become: yes
+
+ roles:
+  - deploy
