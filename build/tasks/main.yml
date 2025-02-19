@@ -12,14 +12,14 @@
 
 - name: fit clone project
   git:
-   repo: {{ repo_url }}
-   dest: {{ git_dest }}
+   repo: "{{ repo_url }}"
+   dest: "{{ git_dest }}"
    force: yes
 
 - name: build project
   command: mvn clean package
   args:
-   chdir: {{ git_dest }}
+   chdir: "{{ git_dest }}"
 
 - name: copy war
   synchronize:
