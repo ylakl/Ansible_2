@@ -1,2 +1,4 @@
 ---
 # defaults file for deploy
+synch_src: /tmp/hello-1.0.war
+synch_dest: /var/lib/tomcat9/webapps/
