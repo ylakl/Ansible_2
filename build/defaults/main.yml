@@ -1,2 +1,6 @@
 ---
 # defaults file for build
+repo_url: https://github.com/ylakl/Boxfuse.git
+git_dest: /Boxfuse
+git_src: /Boxfuse/target/hello-1.0.war
+sink_dir: /tmp/
