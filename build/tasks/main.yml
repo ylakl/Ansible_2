@@ -18,8 +18,8 @@
 
 - name: build project
   command: mvn clean package
-   args:
-    chdir: {{ git_dest }}
+  args:
+   chdir: {{ git_dest }}
 
 - name: copy war
   synchronize:
