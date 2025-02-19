@@ -12,6 +12,6 @@
 
 - name: copy war
   synchronize:
-   src: {{ synch_src }}
-   dest: {{ synch_dest }}
+   src: "{{ synch_src }}"
+   dest: "{{ synch_dest }}"
   notify: start tomcat
