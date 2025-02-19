@@ -1,2 +1,28 @@
 ---
 # tasks file for build
+- name: apt update
+  apt:
+   update_cache: yes
+- name: install packages
+  apt:
+   name:
+    - git
+    - maven
+   state: present
+
+- name: fit clone project
+  git:
+   repo: {{ repo_url }}
+   dest: {{ git_dest }}
+   force: yes
+
+- name: build project
+  command: mvn clean package
+   args:
+    chdir: {{ git_dest }}
+
+- name: copy war
+  synchronize:
+    mode: pull 
+    src: "{{ git_src }}"
+    dest: "{{ sink_dir }}"
