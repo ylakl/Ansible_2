@@ -1,2 +1,6 @@
 ---
 # handlers file for deploy
+- name: start tomcat
+  service:
+   name: tomcat9
+   state: started
